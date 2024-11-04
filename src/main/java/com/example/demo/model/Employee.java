@@ -1,11 +1,11 @@
-package com.example.demo;
+package com.example.demo.model;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.*;
-
+@NoArgsConstructor
 @Data
 public class Employee implements Comparable<Employee>{
     private  Integer id;
@@ -22,6 +22,12 @@ public class Employee implements Comparable<Employee>{
         this.salary = salary;
         this.age = age;
         this.department=mathematics;
+    }
+    public Employee(Integer id, String name, Double salary, Integer age) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+        this.age = age;
     }
 
 
@@ -122,8 +128,8 @@ public class Employee implements Comparable<Employee>{
 //        System.out.println(mapEmp);
 
        // Map<Department, Long> collect = list.stream().collect(Collectors.groupingBy(Employee::getDepartment, Collectors.counting()));
-        Map<Integer, Optional<Employee>> collect1 = list.stream().collect(Collectors.groupingBy(Employee::getAge, Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary))));
-        collect1.forEach((k,v)-> System.out.println(k+""+v));
+//        Map<Integer, Optional<Employee>> collect1 = list.stream().collect(Collectors.groupingBy(Employee::getAge, Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary))));
+//        collect1.forEach((k,v)-> System.out.println(k+""+v));
 
         //Intermediate operations
          /*

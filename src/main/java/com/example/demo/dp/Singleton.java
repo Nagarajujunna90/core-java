@@ -1,6 +1,4 @@
-package com.example.demo;
-
-import lombok.Synchronized;
+package com.example.demo.dp;
 
 public class Singleton {
     //1st approach

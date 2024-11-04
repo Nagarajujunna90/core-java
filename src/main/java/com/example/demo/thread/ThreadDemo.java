@@ -1,6 +1,8 @@
-package com.example.demo;
+package com.example.demo.thread;
 
-public class ThreadDemo2 implements Runnable{
+import com.example.demo.dp.Singleton;
+
+public class ThreadDemo implements Runnable{
     @Override
     public void run() {
         Singleton singleton=Singleton.getSingleton();

@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.without.predefined;
 
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

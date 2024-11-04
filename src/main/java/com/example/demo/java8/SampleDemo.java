@@ -1,10 +1,10 @@
-package com.example.demo;
+package com.example.demo.java8;
+
+import com.example.demo.model.Department;
+import com.example.demo.model.Employee;
 
 import java.util.*;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class SampleDemo {
     public static void main(String[] args) {
@@ -21,11 +21,7 @@ public class SampleDemo {
         list.add(emp3);
         list.add(emp4);
 
-//        List<String> collect1 = list.stream().map(Employee::getName).collect(Collectors.toList());
-//        System.out.println(collect1);
-//
-//        Employee employee = list.stream().max(Comparator.comparingDouble(Employee::getSalary)).get();
-//        System.out.println(employee.getSalary());
+
 
         IntStream.rangeClosed(1,10).map(i->i*2).forEach(System.out::println);
         IntStream.iterate(1,n->n*2).limit(10).forEach(System.out::println);
