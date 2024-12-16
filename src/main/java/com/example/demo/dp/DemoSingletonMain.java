@@ -1,8 +1,5 @@
 package com.example.demo.dp;
 
-import com.example.demo.thread.ThreadDemo;
-import com.example.demo.thread.ThreadDemo2;
-
 public class DemoSingletonMain {
     public static void main(String[] args) {
         Singleton singleton = Singleton.getSingleton();
