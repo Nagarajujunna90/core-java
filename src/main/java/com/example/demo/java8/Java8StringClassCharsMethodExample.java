@@ -11,7 +11,7 @@ public interface Java8StringClassCharsMethodExample {
         text.chars()
                 .forEach(c -> System.out.println((char) c));
 
-        // Example 2: Count the number of vowels
+        // Example 2: Count the number of vowels in given text string
         long vowelCount = text.chars()
                 .filter(c -> "AEIOUaeiou".indexOf(c) >= 0)
                 .count();
