@@ -1,12 +1,15 @@
 package com.example.demo.model;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.*;
 import java.util.stream.*;
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 public class Employee implements Comparable<Employee>{
     private  Integer id;
     private String name;
@@ -23,6 +26,20 @@ public class Employee implements Comparable<Employee>{
         this.age = age;
         this.department=mathematics;
     }
+
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Employee employee = (Employee) o;
+//        return Objects.equals(id, employee.id) && Objects.equals(name, employee.name) ;
+//    }
+
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id, name);
+//    }
+
     public Employee(Integer id, String name, Double salary, Integer age) {
         this.id = id;
         this.name = name;
