@@ -1,24 +1,41 @@
 package com.example.demo.model;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
-import java.util.*;
-import java.util.function.Function;
-import java.util.stream.*;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
 public class Employee {
     private Integer id;
     private String name;
     private Double salary;
     private String gender;
-
     private Integer age;
-
     private Department department;
+    public Employee(Integer id, String name, Double salary, Integer age_){
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+        this.age = age;
+    }
+
+    public Employee(Integer id, String name, Double salary, Integer age, Department mathematics) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+        this.age = age;
+        this.gender = gender;
+        this.department = mathematics;
+    }
 
     public Employee(Integer id, String name, Double salary, Integer age, String gender, Department mathematics) {
         this.id = id;
@@ -29,16 +46,7 @@ public class Employee {
         this.department = mathematics;
     }
 
-    public Employee(Integer id, String name, Double salary, Integer age) {
-        this.id = id;
-        this.name = name;
-        this.salary = salary;
-        this.age = age;
-    }
 
-    public Employee(String s) {
-        this.name = s;
-    }
 
     public static void main(String[] args) {
         List<Employee> employeeList = Arrays.asList(
@@ -56,10 +64,10 @@ public class Employee {
         ///count and filter->	How many male and female employees are there in the IT team?
         Map<Department, List<Employee>> it1 = employeeList.stream().filter(employee -> employee.getDepartment().getName().equals("IT"))
                 .collect(Collectors.groupingBy(Employee::getDepartment));
-        System.out.println("department "+it1);
+        System.out.println("department " + it1);
 
         Map<String, Long> collect1 = it1.entrySet().stream().flatMap(m -> m.getValue().stream()).collect(Collectors.groupingBy(Employee::getGender, Collectors.counting()));
-        System.out.println("finally"+collect1);
+        System.out.println("finally" + collect1);
 
         //Average-What is the average age of male and female employees?
         employeeList.stream()
@@ -79,8 +87,8 @@ public class Employee {
         //Grouping with mapping -  List down the names of all employees in each department?
         Map<Department, List<String>> collect = employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment, Collectors.mapping(Employee::getName, Collectors.toList())));
         System.out.println(collect);
-        for (Map.Entry<Department, List<String>> entry: collect.entrySet()) {
-            System.out.println(entry.getKey().getName()+"-----"+entry.getValue());
+        for (Map.Entry<Department, List<String>> entry : collect.entrySet()) {
+            System.out.println(entry.getKey().getName() + "-----" + entry.getValue());
         }
 
         //>	Get the details of highest paid employee in the organization?
@@ -93,9 +101,6 @@ public class Employee {
 
 
         //Print the name of all departments in the organization?
-
-
-
 
 
     }
