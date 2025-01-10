@@ -1,92 +1,87 @@
 package com.example.demo;
 
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
 import java.util.*;
-import java.util.concurrent.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
-import static java.util.Comparator.comparingDouble;
-import static java.util.Comparator.comparingInt;
-import static java.util.stream.Collectors.*;
-
 public class DemoApplication {
-    public static void main(String[] args) throws Exception {
-        String[] str = {"Hello", "World"};
-        Stream<String> str1 = Stream.of(str);
+    public static void main(String[] args) {
+        int a=10;
+        int maxInt = Integer.MAX_VALUE;
+        int minInt = Integer.MIN_VALUE;
+        System.out.println("Max value of Integer = " + maxInt);
+        System.out.println("Min value of Integer = " + minInt);
 
-        int num[] = {1, 2, 3, 4};
-       // System.out.println(Arrays.stream(num).count());
+        String b = "12345";
+        String d = "abcdef";
+        for (Character c :b.toCharArray()) {
+            Character.getNumericValue(c);
+        }
 
-        int num2[] = {1, 2, 3, 4};
-        long count1 = Stream.of(num2).count();
-      //  System.out.println(count1);
+        b.chars().map(Character::getNumericValue).forEach(System.out::println);
 
-        long count = Stream.of(num2).flatMapToInt(Arrays::stream).count();
-         System.out.println(count);
-
-        String st = "12345";
-
-        int sum = st.chars().map(Character::getNumericValue).filter(s -> s % 2 != 0).sum();
-
-        List<Employee> list = Arrays.asList(
-                new Employee(1, "abc", "IT", 300.0),
-                new Employee(1, "xyz", "Finance", 2.0),
-                new Employee(1, "pqr", "Finance", 30.0)
-        );
-
-        list.stream().max(Comparator.comparingDouble(Employee::getSalary)).ifPresent(System.out::println);
-
-        Map<String, Optional<Employee>> highestSalariesByDept = list.stream().
-                collect(Collectors.groupingBy(Employee::getDepartment, Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary))));
-
-        highestSalariesByDept.forEach((dept, employee) -> System.out.println("Department: " + dept +
-                ", Highest Salary: " + (employee.isPresent() ? employee.get() : "N/A")));
-
-        //LongStream.rangeClosed(1,10).boxed().collect(Collectors.toList()).forEach(System.out::println);
-        //Stream.iterate(1,n->n+1).limit(10).collect(Collectors.toList()).forEach(System.out::println);
-//        Random rand = new Random();
-//        Stream.generate(() -> rand.nextInt(10)).limit(10).sorted().collect(Collectors.toList()).forEach(System.out::println);
-        //List<Integer> integerList = Arrays.asList(1, 2, 34, 3, 2, 2);
-        //integerList.stream().distinct().collect(Collectors.toList()).forEach(s-> System.out.println(s));
+        Integer[] integerArray={1,2,3,4};
 
 
+        List<Integer> list=new ArrayList<>();
+        char[] charArray={'n','a','g','a'};
+        int[] intArray = { 1, 2, 3, 4, 5 };
+        long[] longArray={1,2,3,4,5};
+        double[] doubleArray={1.0,2.0,3.0,4.0,5.0};
+        String[] stringArray={"naga","raju","junna","yadav"};
+     //   Arrays.stream(stringArray).map(String::length).forEach(System.out::println);
+       // Stream.of(stringArray).map(String::length).forEach(System.out::println);
+//        Stream<Integer> stream1 = Arrays.stream(integerArray);
+//        Stream<Integer> intArray1 = Stream.of(integerArray);
+//
+//        IntStream primitiveInt = Arrays.stream(intArray);
+//        Stream<int[]> primitiveStream = Stream.of(intArray);
+//        //if you want to convert above to IntStream
+//        IntStream intStream = primitiveStream.flatMapToInt(Arrays::stream);
+//
+//
+//        primitiveInt.forEach(System.out::println);
+//        primitiveStream.toArray();
+//
+//        String[] str = {"apple", "banana", "pear", "kiwi"};
+//
+//        Stream<String> stringStream1 = Stream.of(str);
+//        Stream<String> arrayStream = Arrays.stream(str);
+//
+////        arrayStream.forEach(System.out::println);
+////        stringStream1.forEach(System.out::println);
+//
+//        String str1="apple,banana,pear,kiwi";
+//        Stream<String> stringStream = Stream.of(str1);
+////        stringStream.forEach(System.out::println);
+//
+//
+////        String collect3 = stringStream1.collect(Collectors.joining());
+////        String collect4 = arrayStream.collect(Collectors.joining());
+////
+////        Stream<String> stringStream = Stream.of(str1);
+////        String collect2 = stringStream.collect(Collectors.joining());
+//
+////        System.out.println(collect2);
+////        System.out.println(collect3);
+////        System.out.println(collect4);
+//
+//        Map<Integer, List<String>> collect = Arrays.stream(str).collect(Collectors.groupingBy(String::length));
+////        System.out.println(collect);
+//
+//        String collect1 = Arrays.stream(str).sorted(Comparator.comparing(String::length)).collect(Collectors.joining(","));
+////        System.out.println(collect1);
+//
+//        String reversed = Arrays.stream(str).sorted(Comparator.reverseOrder()).collect(Collectors.joining(","));
+////        System.out.println(reversed);
+//
+//        Stream<String> stream = Arrays.stream(str);
+////        System.out.println(stream);
 
-    String ss = "Pawan kavita kiyansh Patidar Patidar";
-    StringBuilder ress = new StringBuilder();
-
-    Map<Character, Integer> fre = ss.chars().boxed()
-            .collect(Collectors.toMap(k->Character.valueOf((char)k.intValue()),k->1,Integer::sum));
-
-    fre.forEach((k, v) -> System.out.println((k + ":" + v)));
-
-    fre.entrySet().forEach(e ->{
-        //System.out.println(e.getKey() + ":" + e.getValue());
-        //ress.append(String.valueOf(e.getKey())+e.getValue());
-    });
-
-    fre.forEach((k,v)->{
-        //System.out.println("Item : " + k + " Count : " + v);
-        ress.append(String.valueOf(k)+String.valueOf(v));
-    });
-
-    System.out.println(ress.toString());
-}
-}
 
 
-@AllArgsConstructor
-@Data
-class Employee {
-    private Integer id;
-    private String name;
-    private String department;
-    private Double salary;
 
+    }
 }

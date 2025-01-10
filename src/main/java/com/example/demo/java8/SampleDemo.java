@@ -8,18 +8,14 @@ import java.util.stream.IntStream;
 
 public class SampleDemo {
     public static void main(String[] args) {
-        Employee emp1 = new Employee(1, "nagaraju", 40000.0, 40,new Department(1,"mathematics"));
-        Employee emp2 = new Employee(2, "raju", 50000.0, 30,new Department(2,"science"));
-        Employee emp3 = new Employee(3, "kumar", 30000.0, 20,new Department(3,"social"));
-        Employee emp4 = new Employee(4, "vinod", 30000.0, 50,new Department(1,"mathematics"));
-        Employee emp5 = new Employee(5, "rajesh", 20000.0, 50,new Department(2,"science"));
+        List<Employee> list = Arrays.asList(
+                new Employee(1, "nagaraju", 40000.0, 40, "Male", new Department(1, "mathematics")),
+                new Employee(2, "raju", 50000.0, 30,"female", new Department(2, "science")),
+                new Employee(3, "kumar", 30000.0, 20, "male",new Department(3, "social")),
+                new Employee(4, "vinod", 30000.0, 50,"Male", new Department(1, "mathematics")),
+                new Employee(5, "rajesh", 20000.0, 50,"Male", new Department(2, "science")));
 
-        List<Employee> list = new ArrayList<>();
-        list.add(emp1);
-        list.add(emp5);
-        list.add(emp2);
-        list.add(emp3);
-        list.add(emp4);
+
 
 
 
