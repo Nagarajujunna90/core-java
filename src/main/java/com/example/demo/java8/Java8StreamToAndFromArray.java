@@ -61,7 +61,7 @@ Java program to convert a stream of objects to an array of objects.
 */
         Stream<String> strStreams = Arrays.stream(new String[]{});
         String[] stringArrays = strStream.toArray(String[]::new);
-      //  Employee[] employees = Stream.of(new Employee(1, "nagaraju", 1.0, 23,1)).toArray(Employee[]::new);
+      //  JanuaryPractice[] employees = Stream.of(new JanuaryPractice(1, "nagaraju", 1.0, 23,1)).toArray(JanuaryPractice[]::new);
 
 
     }

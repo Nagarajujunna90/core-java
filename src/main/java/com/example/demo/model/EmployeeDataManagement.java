@@ -38,7 +38,7 @@ public class EmployeeDataManagement {
         System.out.println(collect1);
 
         //>	What is the average salary of each department?
-       // Map<Department, Double> collect4 = employeeList.stream().collect(Collectors.mapping(Employee::getDepartment,Department::getName)));
+       // Map<Department, Double> collect4 = employeeList.stream().collect(Collectors.mapping(JanuaryPractice::getDepartment,Department::getName)));
       //  System.out.println(collect4);
     }
 }

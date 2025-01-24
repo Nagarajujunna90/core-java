@@ -29,8 +29,8 @@ public class Java8StreamExamples {
 		System.out.println(min.get());*/
 		//stringList.stream().skip(2).collect(Collectors.toList()).forEach(s -> System.out.println(s));
 
-//		Map<Employee,String> hashMapEx=new HashMap<>();
-//		hashMapEx.put(new Employee(1,"nagaraju",1000.0,12),"nagaraju");
+//		Map<JanuaryPractice,String> hashMapEx=new HashMap<>();
+//		hashMapEx.put(new JanuaryPractice(1,"nagaraju",1000.0,12),"nagaraju");
 //		hashMapEx.put(1,"nagaraju");
 //		System.out.println(hashMapEx);
 

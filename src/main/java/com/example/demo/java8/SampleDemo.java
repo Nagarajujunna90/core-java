@@ -22,9 +22,9 @@ public class SampleDemo {
         IntStream.rangeClosed(1,10).map(i->i*2).forEach(System.out::println);
         IntStream.iterate(1,n->n*2).limit(10).forEach(System.out::println);
 
-        // Map<Integer, String> employeeList = list.stream().collect(Collectors.toMap(Employee::getId,Employee::getName));
+        // Map<Integer, String> employeeList = list.stream().collect(Collectors.toMap(JanuaryPractice::getId,JanuaryPractice::getName));
       //  employeeList.forEach((k,v)-> System.out.println(k+" "+v));
-      //  List<Employee> collect = list.stream().sorted(Comparator.comparing(Employee::getName)).collect(Collectors.toList());
+      //  List<JanuaryPractice> collect = list.stream().sorted(Comparator.comparing(JanuaryPractice::getName)).collect(Collectors.toList());
         //collect.forEach(System.out::println);
 
         int[] intary=new int[]{12,1,3,5};
